@@ -1,0 +1,23 @@
+
+<nav>
+    <ul>
+        <li>
+            <a routerLink="/">Weather Forecast</a>
+        </li>
+
+        <li>
+            <a routerLink="/history">Histórico</a>
+        </li>
+
+        <li>
+            <form #f='ngForm' (ngSubmit)='onSubmit(f)'>
+                <div class="">
+                    <input type="text" placeholder='Localização' name="location" ngModel>
+                    <button type="submit">Procurar</button>
+                </div>
+            </form>
+        </li>
+    </ul>
+</nav>
+
+<app-info-container [show]="show" [info]="response" [loading]="loading" [error]="error"></app-info-container>

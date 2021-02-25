@@ -1,0 +1,32 @@
+.info-container {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+#time {
+  font-size: 1.3vh;
+}
+
+#temperature {
+  font-size: 4vh;
+}
+
+#main-info {
+  display: flex;
+  flex-direction: row;
+}
+
+#location-name {
+  font-size: 3vh;
+}
+
+img {
+  margin-right: 10px;
+}

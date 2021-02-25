@@ -1,0 +1,31 @@
+<div class="info-container" *ngIf='!show && !loading && !error'>
+    <h1>Utilize a barra de pesquisa no canto superior direito</h1>
+</div>
+
+<div class="info-container" *ngIf='loading'>
+    <h1>Buscando... Por favor, aguarde</h1>
+</div>
+
+<div class="info-container" *ngIf='error'>
+    <h1>Não foi possível carregar as informações para a busca</h1>
+</div>
+
+<div class="info-container" *ngIf='show && info'>
+    <div class='column'>
+        <h4 id="location-name">{{info.location.name}}, {{info.location.region}}</h4>
+        <h5 id="time">{{info.location.localtime.split(" ")[1]}}</h5>
+        <div id="main-info">
+            <img src={{info.current.weather_icons}} alt="weather_img">
+            <h5 id='temperature'>{{info.current.temperature}}ºC</h5>
+        </div>
+
+        <h5>{{info.current.weather_descriptions}}</h5>
+    </div>
+
+    <div class='column'>
+        <h4>Rajadas de vento: {{info.current.wind_speed}}km/h</h4>
+        <h4>Umidade do ar: {{info.current.humidity}}%</h4>
+        <h4>Sensação de: {{info.current.feelslike}}ºC</h4>
+        <h4>UV index: {{info.current.uv_index}}</h4>
+    </div>
+</div>

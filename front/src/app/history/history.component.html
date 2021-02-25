@@ -1,0 +1,21 @@
+<nav>
+    <ul>
+        <li>
+            <a routerLink="/">Weather Forecast</a>
+        </li>
+    </ul>
+</nav>
+
+<h2>Histórico (página {{page + 1}})</h2>
+
+<button [disabled]="page === 0" (click)="prevPage()">Anterior</button>
+
+<button (click)="nextPage()">Próximo</button>
+
+<h3 *ngIf="loading">Buscando dados...</h3>
+<h3 *ngIf="!loading && error">Não foi possível comunicar com o servidor...</h3>
+
+<div *ngFor="let item of history; let i = index">
+    <h4>{{i}}</h4>
+    <app-info-container [show]="true" [info]="item"></app-info-container>
+</div>
